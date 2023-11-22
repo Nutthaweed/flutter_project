@@ -11,12 +11,15 @@ class HomeScreen extends StatelessWidget {
     drawer: const SideBar(),
     appBar: AppBar(
       backgroundColor:  MyConstant.primary,
-      leading:  IconButton(
+      leading:  Builder(builder: (context) {
+        return IconButton(
         icon: const Icon(Icons.menu),
         color: MyConstant.active,
         onPressed:() => {
-          const SideBar()
+          Scaffold.of(context).openDrawer()
         },
+        );
+      }
       ),
     title: const Text('Welcome to Shunsay'),
     actions:  [
