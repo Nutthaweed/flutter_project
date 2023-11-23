@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:windby/constant/my_constant.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: MyConstant.primary,
+      body:  const SafeArea(  
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 50),
+
+              
+            ]
+          )
+        )
+      ),
+    );
   }
 }
