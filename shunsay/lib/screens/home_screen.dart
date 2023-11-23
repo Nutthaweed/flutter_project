@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shunsay/constant/my_constant.dart';
-import 'package:shunsay/components/side_bar.dart';
+import 'package:windby/constant/my_constant.dart';
+import 'package:windby/components/side_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,13 +21,8 @@ class HomeScreen extends StatelessWidget {
         );
       }
       ),
-    title: const Text('Welcome to Shunsay'),
-    actions:  [
-      Icon(Icons.search, size: 24, color: MyConstant.active,),
-      const SizedBox(width: 20,),
-      Icon(Icons.verified_user_outlined, size: 24, color: MyConstant.active,),
-      const SizedBox(width: 20,),
-    ]
+    title: const Text('Welcome to Windy',textAlign: TextAlign.center),
+
     ),
    
   );

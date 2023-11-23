@@ -1,4 +1,4 @@
-package com.example.shunsay
+package com.example.windby
 
 import io.flutter.embedding.android.FlutterActivity
 

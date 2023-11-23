@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           brightness: Brightness.light,
-          scaffoldBackgroundColor: MyConstant.primary,
+          scaffoldBackgroundColor: MyConstant.secondary,
           primaryColor: MyConstant.primary),
       home: const HomeScreen(),
     );
