@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
 import 'constant/my_constant.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.light,
           scaffoldBackgroundColor: MyConstant.secondary,
           primaryColor: MyConstant.primary),
-      home: const HomeScreen(),
+      home: const LoginPage(),
     );
   }
 }
