@@ -20,10 +20,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          fontFamily: 'customFont',
           brightness: Brightness.light,
           scaffoldBackgroundColor: MyConstant.secondary,
           primaryColor: MyConstant.primary),
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
