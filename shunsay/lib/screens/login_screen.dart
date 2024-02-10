@@ -71,7 +71,21 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height:  20,),
 
-              
+              Row(
+                 mainAxisAlignment:  MainAxisAlignment.center,
+                 children: [
+                  Text(
+                    'Not a member?',
+                    style: TextStyle(color: Colors.grey[700],)
+                  ),
+                  const SizedBox(width: 4),
+                  const Text(
+                    'Sign Up',
+                    style:  TextStyle(color: Colors.blue, fontWeight:  FontWeight.bold,),
+
+                  )
+                 ]
+              ),
 
             ]
           )
