@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "635095137113",
+    "project_id": "windbyauth",
+    "storage_bucket": "windbyauth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635095137113:android:848edbae8620ab93142a48",
+        "android_client_info": {
+          "package_name": "com.example.windby"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiU24jKOlnhDOqaSvZ3es-WJMQKhhhsrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

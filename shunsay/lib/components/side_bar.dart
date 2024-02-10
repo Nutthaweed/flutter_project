@@ -1,9 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 
 
 class SideBar extends StatelessWidget {
-  const SideBar({super.key});
+   SideBar({super.key});
+
+  final user = FirebaseAuth.instance.currentUser!;
+
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +18,7 @@ class SideBar extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            UserAccountsDrawerHeader(accountName: const Text(''), accountEmail: const Text(''),
+            UserAccountsDrawerHeader(accountName:  const Text(''), accountEmail: Text('${user.email}!'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child:  Image.network(
@@ -31,9 +38,10 @@ class SideBar extends StatelessWidget {
                 )
               )
             ),
-            const ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Exit'),
+             ListTile(
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text('Exit'),
+              onTap: signUserOut,
             )
           ]
         )

@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
-    drawer: const SideBar(),
+    drawer: SideBar(),
     appBar: AppBar(
       backgroundColor:  MyConstant.primary,
       leading:  Builder(builder: (context) {

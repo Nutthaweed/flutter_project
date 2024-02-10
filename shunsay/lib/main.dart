@@ -1,9 +1,16 @@
 
 import 'package:flutter/material.dart';
-import 'screens/login_screen.dart';
-import 'constant/my_constant.dart';
+import 'package:windby/screens/auth_screen.dart';
 
-void main() {
+import 'constant/my_constant.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -24,7 +31,7 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.light,
           scaffoldBackgroundColor: MyConstant.secondary,
           primaryColor: MyConstant.primary),
-      home: LoginPage(),
+      home: const AuthPage(),
     );
   }
 }
