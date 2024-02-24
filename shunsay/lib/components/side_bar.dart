@@ -42,6 +42,10 @@ class SideBar extends StatelessWidget {
               leading: const Icon(Icons.exit_to_app),
               title: const Text('Exit'),
               onTap: signUserOut,
+            ),
+            const ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings')
             )
           ]
         )
