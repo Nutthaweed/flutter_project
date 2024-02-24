@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:windby/screens/home_screen.dart';
-import 'package:windby/screens/login_screen.dart';
+import 'package:windby/screens/login_and_register.dart';
+
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -17,7 +18,7 @@ class AuthPage extends StatelessWidget {
             }
 
             else {
-              return const LoginPage();
+              return const LoginandRegisterPage();
             }
         },
       )

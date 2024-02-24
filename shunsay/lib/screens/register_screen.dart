@@ -6,20 +6,20 @@ import 'package:windby/components/signin_button.dart';
 import 'package:windby/constant/my_constant.dart';
 import 'package:windby/components/text_fields.dart';
 
-class LoginPage extends StatefulWidget { 
-  final Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+class RegisterScreen extends StatefulWidget { 
+  final Function() ? onTap;
+  const RegisterScreen({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final emailController = TextEditingController();
-
  final passwordController = TextEditingController();
+ final confirmpasswordController = TextEditingController();
 
- void signUserIn()  async{
+ void signUserUp()  async{
 
     showDialog(context: context, builder: (context) {
           return const Center(
@@ -28,10 +28,14 @@ class _LoginPageState extends State<LoginPage> {
     },);
 
 try {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
+  if (passwordController.text == confirmpasswordController.text){
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: emailController.text, 
       password: passwordController.text
     );
+  } else {
+    showErrormessage("Passwords don't match each other, please try again");
+  }
 
   
   Navigator.pop(context);
@@ -45,7 +49,7 @@ try {
 
 void showErrormessage(String message) {
   showDialog(context: context, builder: (context) {
-      return AlertDialog(
+      return   AlertDialog(
           backgroundColor:  Colors.redAccent,
           title: Center(
             child: Text(
@@ -78,13 +82,13 @@ void showErrormessage(String message) {
                   width:  75,
                 ),
                 const SizedBox(height: 50),
-                Text('Welcome back!',
+                Text('Get Ready for Our App, Just register!',
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 16
                 )
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 20),
           
                  MyTextField(
                   controller:  emailController,
@@ -92,34 +96,31 @@ void showErrormessage(String message) {
                   obscureText:  false,
                 ),
           
-                const SizedBox(height:  25,),
+                const SizedBox(height:  10,),
           
                   MyTextField(
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText:  true,
                  ),
+
+                 const SizedBox(height:  10,),
+          
+                  MyTextField(
+                  controller: confirmpasswordController,
+                  hintText: 'Confirm Password',
+                  obscureText:  true,
+                 ),
                
                 const SizedBox(height: 10,),
           
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.grey[600])
-                      )
-              ]
-                  )
-                  ),
+                
           
                   const SizedBox(height: 25),
           
                    MyButton(
-                    text: 'Sign in',
-                    onTap: signUserIn,
+                    text: 'Sign Up',
+                    onTap: signUserUp,
                    ),
           
                   const SizedBox(height:  20,),
@@ -128,14 +129,14 @@ void showErrormessage(String message) {
                    mainAxisAlignment:  MainAxisAlignment.center,
                    children: [
                     Text(
-                      'Not a member?',
+                      'Already member?',
                       style: TextStyle(color: Colors.grey[700],)
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        'Sign Up',
+                        'Sign In',
                         style:  TextStyle(color: Colors.blue, fontWeight:  FontWeight.bold,),
                               
                       ),
