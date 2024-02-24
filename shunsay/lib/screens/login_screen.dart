@@ -3,8 +3,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:windby/components/signin_button.dart';
+import 'package:windby/components/square.dart';
 import 'package:windby/constant/my_constant.dart';
 import 'package:windby/components/text_fields.dart';
+import 'package:windby/services/aurh_service.dart';
 
 class LoginPage extends StatefulWidget { 
   final Function()? onTap;
@@ -142,7 +144,33 @@ void showErrormessage(String message) {
                     )
                    ]
                 ),
-          
+
+                 const SizedBox(height:  50,),
+
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal:  10.0),
+                    child:  Text(
+                      "You can sign in with"
+                    )
+                    ,),
+
+                    const SizedBox(height: 20),
+
+                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                          SquareTile(
+                            onTap: () =>  AuthService().signInWithGoogle(),
+                            imagePath: 'assets/images/google.png'),
+
+                          const SizedBox(width:  10,),
+
+                          SquareTile(
+                            onTap: () {},
+                            imagePath: 'assets/images/ICIT.png')
+                      ],
+                    ),
+
               ]
             ),
           )
